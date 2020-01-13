@@ -11,6 +11,3 @@ docker build -t liararepo/dotnetcore-platform:runtime -f Dockerfile.runtime --bu
 
 docker build -t liararepo/dotnetcore-platform:builder -f Dockerfile.builder --build-arg DOTNETCORE_VERSION=2.1 .
 docker build -t liararepo/dotnetcore-platform:runtime -f Dockerfile.runtime --build-arg DOTNETCORE_VERSION=2.1 .
-
-docker build -t liararepo/dotnetcore-platform:builder -f Dockerfile.builder --build-arg DOTNETCORE_VERSION=2.0 .
-docker build -t liararepo/dotnetcore-platform:runtime -f Dockerfile.runtime --build-arg DOTNETCORE_VERSION=2.0 .
