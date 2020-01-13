@@ -19,6 +19,10 @@ if [ -z ${__DOTNETCORE_PROJECT_NAME:-} ]; then
 	echo "Could not find a .csproj file.";
 	exit 2;
 fi
+if [ -n "$(cat $PROJECT_FILE | grep 'netcoreapp2.0')" ]; then
+	echo "======== WARNING ========"
+	echo "We don't support netcoreapp2.0. You may need to upgrade your framework version."
+fi
 
 dotnet publish $__DOTNETCORE_PROJECT_FILE --output /app --configuration ${BUILD_CONFIGURATION}
 
