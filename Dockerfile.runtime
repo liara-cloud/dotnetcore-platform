@@ -1,0 +1,12 @@
+ARG DOTNETCORE_VERSION
+
+FROM mcr.microsoft.com/dotnet/core/runtime:$DOTNETCORE_VERSION-alpine
+
+WORKDIR /app
+
+RUN apk add libunwind gettext
+
+ONBUILD COPY --from=builder /usr/local/app-name /usr/local
+ONBUILD COPY --from=builder /app .
+
+CMD dotnet $(cat /usr/local/app-name)
