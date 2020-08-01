@@ -2,6 +2,9 @@ ARG DOTNETCORE_VERSION
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:$DOTNETCORE_VERSION
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libgdiplus
+
 WORKDIR /app
 
 ONBUILD COPY --from=builder /usr/local/app-name /usr/local
