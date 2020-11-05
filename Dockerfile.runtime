@@ -3,7 +3,7 @@ ARG DOTNETCORE_VERSION
 FROM mcr.microsoft.com/dotnet/core/aspnet:$DOTNETCORE_VERSION
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends libgdiplus
+    apt-get install -y --no-install-recommends libgdiplus vim unzip
 
 WORKDIR /app
 
