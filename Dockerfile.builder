@@ -1,6 +1,6 @@
 ARG DOTNETCORE_VERSION
 
-FROM mcr.microsoft.com/dotnet/core/sdk:$DOTNETCORE_VERSION
+FROM mcr.microsoft.com/dotnet/sdk:$DOTNETCORE_VERSION
 
 WORKDIR /src
 
